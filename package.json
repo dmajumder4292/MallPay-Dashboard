@@ -47,6 +47,7 @@
     "axios-mock-adapter": "^1.17.0",
     "chart.js": "^2.9.2",
     "clsx": "^1.0.4",
+    "download-csv": "^1.1.1",
     "draft-js": "^0.11.2",
     "history": "^4.10.1",
     "immutable": "^4.0.0-rc.12",

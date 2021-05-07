@@ -181,8 +181,8 @@ function NavBar({
           key: list.subheader
         }))}
       </nav>
-      <Divider className={classes.divider} />
-      <div className={classes.profile}>
+      {/* <Divider className={classes.divider} /> */}
+      {/* <div className={classes.profile}>
         <Badge
           overlap="circle"
           anchorOrigin={{
@@ -226,7 +226,7 @@ function NavBar({
         >
           <MoreIcon />
         </IconButton>
-      </div>
+      </div> */}
     </div>
   );
 

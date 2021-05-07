@@ -14,7 +14,7 @@ export default [
   {
     path: '/',
     exact: true,
-    component: () => <Redirect to="/presentation" />
+    component: () => <Redirect to="/malls" />
   },
   {
     path: '/auth',
@@ -112,6 +112,41 @@ export default [
         path: '/components/modals',
         exact: true,
         component: lazy(() => import('src/views/Modals'))
+      },
+      {
+        path: '/malls',
+        exact: true,
+        component: lazy(() => import('src/views/Malls'))
+      },
+      {
+        path: '/brands',
+        exact: true,
+        component: lazy(() => import('src/views/Brands'))
+      },
+      {
+        path: '/vouchers',
+        exact: true,
+        component: lazy(() => import('src/views/Vouchers'))
+      },
+      {
+        path: '/promotions',
+        exact: true,
+        component: lazy(() => import('src/views/Promotions'))
+      },
+      {
+        path: '/events',
+        exact: true,
+        component: lazy(() => import('src/views/Events'))
+      },
+      {
+        path: '/locations',
+        exact: true,
+        component: lazy(() => import('src/views/Locations'))
+      },
+      {
+        path: '/stores',
+        exact: true,
+        component: lazy(() => import('src/views/Stores'))
       },
       {
         path: '/components/typography',

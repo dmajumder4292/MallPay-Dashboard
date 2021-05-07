@@ -212,7 +212,7 @@ function TopBar({
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden smDown>
-          <div
+          {/* <div
             className={classes.search}
             ref={searchRef}
           >
@@ -224,7 +224,7 @@ function TopBar({
               placeholder="Search people &amp; places"
               value={searchValue}
             />
-          </div>
+          </div> */}
           <Popper
             anchorEl={searchRef.current}
             className={classes.searchPopper}
@@ -253,14 +253,14 @@ function TopBar({
               </Paper>
             </ClickAwayListener>
           </Popper>
-          <Button
+          {/* <Button
             className={classes.trialButton}
             onClick={handlePricingModalOpen}
             variant="contained"
           >
             <LockIcon className={classes.trialIcon} />
             Trial expired
-          </Button>
+          </Button> */}
         </Hidden>
         <IconButton
           className={classes.chatButton}

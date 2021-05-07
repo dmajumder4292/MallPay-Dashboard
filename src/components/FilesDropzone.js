@@ -101,7 +101,7 @@ function FilesDropzone({ className, ...rest }) {
             gutterBottom
             variant="h3"
           >
-            Select files
+            Upload Store Information
           </Typography>
           <Typography
             className={classes.info}

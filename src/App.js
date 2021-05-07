@@ -41,10 +41,10 @@ function App() {
               <ScrollReset />
               <GoogleAnalytics />
               <CookiesNotification />
-              <DirectionToggle
+              {/* <DirectionToggle
                 direction={direction}
                 onToggle={handleDirecitonToggle}
-              />
+              /> */}
               {renderRoutes(routes)}
             </Router>
           </MuiPickersUtilsProvider>
