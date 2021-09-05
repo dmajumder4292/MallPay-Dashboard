@@ -87,26 +87,25 @@ function Modals() {
           </Card> */}
           <MallCreateModal
             customer={{
-              email: 'j.doe@domain.com',
-              name: 'J Doe',
-              phone: '+4 505 950 823',
-              country: 'USA',
-              state: 'California',
-              address1: '',
-              address2: '',
-              verified: true,
-              discountedPrices: false
+              email: '',
+              name: '',
+              city: '',
+              numStores: '',
+              parkingCap: '',
+              parkingDis: '',
+              phone: '',
+              url: ''
             }}
             onClose={() => setOpenCustomer(false)}
             open={openCustomer}
           />
         </div>
-        {/* {customers && (
+        {customers && (
           <Results
             className={classes.results}
             customers={customers}
           />
-        )} */}
+        )}
       </Container>
     </Page>
   );

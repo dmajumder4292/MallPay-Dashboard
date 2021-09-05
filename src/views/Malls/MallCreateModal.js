@@ -34,10 +34,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function CustomerEditModal({
+function MallCreateModal({
   open, onClose, customer, className, ...rest
 }) {
   const classes = useStyles();
+  const [initValues, setInitValues] = useState({
+    ...customer
+  })
   const [values, setValues] = useState({
     ...customer
   });
@@ -52,6 +55,12 @@ function CustomerEditModal({
           : event.target.value
     }));
   };
+
+  const handleSubmit = () => {
+    console.log(values);
+    setValues(initValues)
+    onClose();
+  }
 
   if (!open) {
     return null;
@@ -84,20 +93,6 @@ function CustomerEditModal({
                   label="Name"
                   name="name"
                   onChange={handleFieldChange}
-                  value={values.email}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid
-                item
-                md={12}
-                xs={12}
-              >
-                <TextField
-                  fullWidth
-                  label="State"
-                  name="state"
-                  onChange={handleFieldChange}
                   value={values.name}
                   variant="outlined"
                 />
@@ -109,107 +104,97 @@ function CustomerEditModal({
               >
                 <TextField
                   fullWidth
-                  label="Image Url"
-                  name="image"
+                  label="City"
+                  name="city"
+                  onChange={handleFieldChange}
+                  value={values.city}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="No. of Stores"
+                  name="numStores"
+                  onChange={handleFieldChange}
+                  value={values.numStores}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="Parking Capacity"
+                  name="parkingCap"
+                  onChange={handleFieldChange}
+                  value={values.parkingCap}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="Parking Discount"
+                  name="parkingDis"
+                  onChange={handleFieldChange}
+                  value={values.parkingDis}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="Email"
+                  name="email"
+                  onChange={handleFieldChange}
+                  value={values.email}
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid
+                item
+                md={12}
+                xs={12}
+              >
+                <TextField
+                  fullWidth
+                  label="Phone"
+                  name="phone"
                   onChange={handleFieldChange}
                   value={values.phone}
                   variant="outlined"
                 />
               </Grid>
-              {/* <Grid
+              <Grid
                 item
-                md={6}
+                md={12}
                 xs={12}
               >
                 <TextField
                   fullWidth
-                  label="State/Region"
-                  name="state"
+                  label="Image Url"
+                  name="url"
                   onChange={handleFieldChange}
-                  value={values.state}
+                  value={values.url}
                   variant="outlined"
                 />
               </Grid>
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <TextField
-                  fullWidth
-                  label="Country"
-                  name="country"
-                  onChange={handleFieldChange}
-                  value={values.country}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <TextField
-                  fullWidth
-                  label="Address 1"
-                  name="address1"
-                  onChange={handleFieldChange}
-                  value={values.address1}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <TextField
-                  fullWidth
-                  label="Address 2"
-                  name="address2"
-                  onChange={handleFieldChange}
-                  value={values.address2}
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item />
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <Typography variant="h5">Email Verified</Typography>
-                <Typography variant="body2">
-                  Disabling this will automatically send the user a verification
-                  email
-                </Typography>
-                <Switch
-                  checked={values.verified}
-                  color="secondary"
-                  edge="start"
-                  name="verified"
-                  onChange={handleFieldChange}
-                  value={values.verified}
-                />
-              </Grid>
-              <Grid
-                item
-                md={6}
-                xs={12}
-              >
-                <Typography variant="h5">Discounted Prices</Typography>
-                <Typography variant="body2">
-                  This will give the user discountedprices for all products
-                </Typography>
-                <Switch
-                  checked={values.discountedPrices}
-                  color="secondary"
-                  edge="start"
-                  name="discountedPrices"
-                  onChange={handleFieldChange}
-                  value={values.discountedPrices}
-                />
-              </Grid> */}
             </Grid>
           </CardContent>
           <Divider />
@@ -219,7 +204,7 @@ function CustomerEditModal({
             </Button>
             <Button
               color="primary"
-              onClick={onClose}
+              onClick={handleSubmit}
               variant="contained"
             >
               Save
@@ -231,16 +216,16 @@ function CustomerEditModal({
   );
 }
 
-CustomerEditModal.propTypes = {
+MallCreateModal.propTypes = {
   className: PropTypes.string,
   customer: PropTypes.any,
   onClose: PropTypes.func,
   open: PropTypes.bool
 };
 
-CustomerEditModal.defaultProps = {
+MallCreateModal.defaultProps = {
   open: false,
   onClose: () => {}
 };
 
-export default CustomerEditModal;
+export default MallCreateModal;
